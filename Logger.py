@@ -6,7 +6,7 @@ baud = 115200
 ser = serial.Serial(port, baud, timeout=1)
 time.sleep(2)  # let Arduino reset
 
-with open("log.csv", "w", newline="") as f:
+with open("experiment1.csv", "w", newline="") as f:
     writer = csv.writer(f)
     while True:
         try:
