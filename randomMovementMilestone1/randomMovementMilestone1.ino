@@ -10,7 +10,7 @@
 
 // -------------------- Tuning --------------------
 #define STEPS_PER_REV 3200L   // 200 steps * 16 microstepping
-#define ENCODER_CPR   2048L   // 512 PPR * 4
+#define ENCODER_CPR   2400L   // 512 PPR * 4
 
 // Max random move size (in steps)
 #define MAX_JUMP_STEPS 1000

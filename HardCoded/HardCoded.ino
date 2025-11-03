@@ -9,14 +9,14 @@
 #define ENCODER_PIN_B A1
 
 // -------------------- Mechanics --------------------
-#define ENCODER_CPR   2048L   
+#define ENCODER_CPR 2400
 
 // -------------------- Motion profile --------------------
 const float PROFILE_SPEED = 5000.0f;   // steps/s
 const float PROFILE_ACCEL = 74000.0f;  // steps/s^2
-const long  STEPSPERMM  = 42.4;      // steps /mm
-const long GOAL = 50;
-const long  PROFILE_DIST  = - 10600;      // steps (relative move)
+const long STEPSPERMM = 42.4;          // steps /mm
+const long GOAL = 1;
+const long PROFILE_DIST = 50;  // steps (relative move)
 
 
 
@@ -27,7 +27,7 @@ Encoder encoder(ENCODER_PIN_A, ENCODER_PIN_B);
 // Timekeeping
 elapsedMillis csvTimer;
 elapsedMillis runTime;
-const uint16_t SAMPLE_PERIOD_MS = 20; // log at 50 Hz
+const uint16_t SAMPLE_PERIOD_MS = 20;  // log at 50 Hz
 
 // -------------------- Helpers --------------------
 inline float encCountsToDeg(long counts) {
@@ -60,7 +60,7 @@ void setup() {
 }
 
 void loop() {
-  stepper.run(); // drive motor
+  stepper.run();  // drive motor
 
 
   if (csvTimer >= SAMPLE_PERIOD_MS) {
@@ -68,8 +68,8 @@ void loop() {
 
     unsigned long t_ms = runTime;
     long stepPos = stepper.currentPosition();
-    long target  = stepper.targetPosition();
-    long encCnt  = encoder.read();
+    long target = stepper.targetPosition();
+    long encCnt = encoder.read();
     float angle_deg = encCountsToDeg(encCnt);
 
     Serial.print(t_ms);
