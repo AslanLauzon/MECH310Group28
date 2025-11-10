@@ -138,7 +138,7 @@ void loop() {
     for (uint16_t i = 0; i < sampleCount; i++) {
       Serial.print(t_array[i]);         Serial.print(',');
       Serial.print(stepPos_array[i]);   Serial.print(',');
-      Serial.print(angleDeg_array[i], 3); Serial.print(',');
+      Serial.print(angleDeg_array[i], 3); Serial.print(',\n');
     }
 
     Serial.println(F("STOP"));
